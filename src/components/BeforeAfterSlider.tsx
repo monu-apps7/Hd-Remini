@@ -43,8 +43,8 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
     setSliderPosition(percentage);
 
     // Loupe coordinates relative to image container
-    let relX = Math.max(0, Math.min(rect.width, clientX - rect.left));
-    let relY = Math.max(0, Math.min(rect.height, clientY - rect.top));
+    const relX = Math.max(0, Math.min(rect.width, clientX - rect.left));
+    const relY = Math.max(0, Math.min(rect.height, clientY - rect.top));
     setLoupePos({ x: relX, y: relY });
   }, []);
 
@@ -64,7 +64,8 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
     }
   };
 
-  const handleMouseUp = () => {
+  const _handleMouseUp = () => { ... }
+
     setIsDragging(false);
   };
 
@@ -83,9 +84,9 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
 
   useEffect(() => {
     const onGlobalMouseUp = () => setIsDragging(false);
-    window.addEventListener("mouseup", onGlobalMouseUp);
-    return () => window.removeEventListener("mouseup", onGlobalMouseUp);
-  }, []);
+    globalThis.addEventListener("mouseup", onGlobalMouseUp);
+    return () => globalThis.removeEventListener("mouseup", onGlobalMouseUp);
+
 
   const finalEnhancedUrl = enhancedCanvasUrl || originalUrl;
 
