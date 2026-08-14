@@ -64,7 +64,6 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
     }
   };
 
-  const _handleMouseUp = () => { ... }
 
     setIsDragging(false);
   };
