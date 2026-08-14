@@ -64,11 +64,11 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
     }
   };
 const handleMouseUp = () => {
-  setIsDragging(false);
+  setIsDragging(false),
 };
 
 
-    setIsDragging(false);
+    setIsDragging(false),
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -85,7 +85,7 @@ const handleMouseUp = () => {
     const onGlobalMouseUp = () => setIsDragging(false);
     globalThis.addEventListener("mouseup", onGlobalMouseUp);
     return () => globalThis.removeEventListener("mouseup", onGlobalMouseUp);
-
+    }, []);
 
   const finalEnhancedUrl = enhancedCanvasUrl || originalUrl;
 
@@ -125,7 +125,8 @@ const handleMouseUp = () => {
             <h3 className="text-lg font-bold text-white mb-1 tracking-tight">Remini AI Magic in Progress</h3>
             <p className="text-xs text-rose-300 max-w-md font-medium">{aiProgressMessage}</p>
             
-            {} catch (error: unknown) {
+          
+       {} catch (error: unknown) {
   console.error("Analysis Error:", error instanceof Error ? error.message : error);
 }
 /* Animated Laser Scanning Line */}
