@@ -63,8 +63,10 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
       }
     }
   };
+const handleMouseUp = () => {
+  setIsDragging(false);
+};
 
-  const _handleMouseUp = () => { ... }
 
     setIsDragging(false);
   };
@@ -78,10 +80,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
 
   const handleTouchMove = (e: React.TouchEvent) => {
     if (isDragging && e.touches[0]) {
-      handleMove(e.touches[0].clientX, e.touches[0].clientY);
-    }
-  };
-
+      handleMove(e.touches[0].clientX, e.touches[0].clientY);} };
   useEffect(() => {
     const onGlobalMouseUp = () => setIsDragging(false);
     globalThis.addEventListener("mouseup", onGlobalMouseUp);
@@ -126,7 +125,10 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
             <h3 className="text-lg font-bold text-white mb-1 tracking-tight">Remini AI Magic in Progress</h3>
             <p className="text-xs text-rose-300 max-w-md font-medium">{aiProgressMessage}</p>
             
-            {/* Animated Laser Scanning Line */}
+            {} catch (error: unknown) {
+  console.error("Analysis Error:", error instanceof Error ? error.message : error);
+}
+/* Animated Laser Scanning Line */}
             <div className="w-64 h-1 bg-neutral-800 rounded-full mt-6 overflow-hidden relative">
               <div className="h-full bg-gradient-to-r from-amber-400 via-rose-500 to-purple-500 w-1/2 rounded-full animate-[pulse_1s_infinite]" />
             </div>
